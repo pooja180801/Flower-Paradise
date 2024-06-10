@@ -1,0 +1,13 @@
+.header{
+    height: 90vh;
+    margin: 30px auto;
+    background: url('../../assets/images/header.jpg') no-repeat;
+    object-fit: fill;
+    position: relative;
+    width: 100%;
+
+}
+
+.header-content{
+    background: red;
+}
