@@ -1,13 +1,51 @@
-.header{
+.header {
     height: 90vh;
-    margin: 30px auto;
-    background: url('../../assets/images/header.jpg') no-repeat;
-    object-fit: fill;
+    margin: 0 auto;
     position: relative;
     width: 100%;
-
+    background-blend-mode: darken;
 }
 
-.header-content{
-    background: red;
+.header-content {
+    background: url('../../assets/images/header.jpg') no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    opacity: 1;
+    padding: 5px 40px;
+    background-blend-mode: darken;
+    opacity: 1;
+    
+}
+
+.header-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: transparent;
+    animation: fadeIn 3s;
+}
+
+.header-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight:800;
+    background: transparent;
+    animation: fadeIn 3s;
+}
+
+.header-content button {
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    animation: fadeIn 3s;
 }
