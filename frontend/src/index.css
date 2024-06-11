@@ -18,7 +18,7 @@ a{
 }
 
 .app{
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
@@ -27,4 +27,13 @@ a{
   --complementary-color: #274764; /* Dark Blue */
   --green: #276442;
   --neutral-color-2: #e1a874; /* Sand Beige */
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
