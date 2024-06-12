@@ -1,6 +1,13 @@
 import React from 'react'
 import './ViewCollections.css'
-import img from '../../assets/images/collection1.png'
+import img1 from '../../assets/images/collection1.png'
+import img2 from '../../assets/images/collection2.png'
+import img3 from '../../assets/images/collection3.png'
+import img4 from '../../assets/images/collection4.png'
+import img5 from '../../assets/images/collection5.png'
+import img6 from '../../assets/images/collection6.png'
+import img7 from '../../assets/images/collection7.png'
+import img8 from '../../assets/images/collection8.png'
 
 const ViewCollections = () => {
   return (
@@ -17,26 +24,44 @@ const ViewCollections = () => {
             )
         })} */}
         <div className='collections-list-item'>
-                    <img src={img} alt='' />
+                    <img src={img1} alt='' />
+                    <p>anniversary</p>
+                </div>
+                <div className='collections-list-item'>
+                    <img src={img2} alt='' />
                     {/* <p>anniversary</p> */}
                 </div>
                 <div className='collections-list-item'>
-                    <img src={img} alt='' />
+                    <img src={img3} alt='' />
                     {/* <p>anniversary</p> */}
                 </div>
                 <div className='collections-list-item'>
-                    <img src={img} alt='' />
+                    <img src={img4} alt='' />
                     {/* <p>anniversary</p> */}
                 </div>
                 <div className='collections-list-item'>
-                    <img src={img} alt='' />
+                    <img src={img5} alt='' />
                     {/* <p>anniversary</p> */}
                 </div>
                 <div className='collections-list-item'>
-                    <img src={img} alt='' />
+                    <img src={img6} alt='' />
+                    {/* <p>anniversary</p> */}
+                </div>
+                <div className='collections-list-item'>
+                    <img src={img7} alt='' />
+                    {/* <p>anniversary</p> */}
+                </div>
+                <div className='collections-list-item'>
+                    <img src={img8} alt='' />
+                    {/* <p>anniversary</p> */}
+                </div>
+                <div className='collections-list-item'>
+                    <img src={img1} alt='' />
                     {/* <p>anniversary</p> */}
                 </div>
       </div>
+      <hr/>
+
 
     </div>
   )

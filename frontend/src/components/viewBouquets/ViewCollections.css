@@ -1,0 +1,51 @@
+.view-collections{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.view-collections h1{
+    color: var(--brown);
+    font-weight: 500;
+}
+
+.view-collections-text{
+    max-width: 60%;
+}
+
+.view-collections-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.view-collections-list::-webkit-scrollbar{
+    display: none;
+}
+
+.collections-list-item img{
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.collections-list-item p{
+    margin-top: 10px;
+    color: var(--brown);
+    font-size: max(1.4vw),16px;
+    cursor: pointer;
+}
+
+hr{
+    margin: 10px 0px;
+    height: 2px;
+    background-color: var(--brown);
+    border: none;
+}
