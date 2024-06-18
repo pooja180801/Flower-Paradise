@@ -1,5 +1,6 @@
 import React from 'react'
 import './ViewCollections.css'
+import {collections_list} from '../../data/data'
 import img1 from '../../assets/images/collection1.png'
 import img2 from '../../assets/images/collection2.png'
 import img3 from '../../assets/images/collection3.png'
@@ -9,56 +10,21 @@ import img6 from '../../assets/images/collection6.png'
 import img7 from '../../assets/images/collection7.png'
 import img8 from '../../assets/images/collection8.png'
 
-const ViewCollections = () => {
+const ViewCollections = ({category,setCategory}) => {
   return (
     <div className='view-collections' id='view-collections'>
       <h1>Explore our collections</h1>
       <p className='view-collections-text'>Discover a stunning array of bouquets, thoughtfully curated to celebrate every moment and mood, in our exclusive collection.</p>
       <div className='view-collections-list'>
-        {/* {collections_list.map((item,index)=>{
+        {collections_list.map((item,index)=>{
             return (
-                <div key={index} className='collections-list-item'>
-                    <img src={item.collection_image} alt='' />
+                <div onClick={()=>setCategory(prev=>prev===item.collection_name?"All":item.collection_name)} key={index} className='collections-list-item'>
+                    <img className={category===item.collection_name?"active":""} src={require(`../../assets/images/${item.img_src}`)} alt='' />
                     <p>{item.collection_name}</p>
                 </div>
             )
-        })} */}
-        <div className='collections-list-item'>
-                    <img src={img1} alt='' />
-                    <p>anniversary</p>
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img2} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img3} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img4} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img5} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img6} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img7} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img8} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
-                <div className='collections-list-item'>
-                    <img src={img1} alt='' />
-                    {/* <p>anniversary</p> */}
-                </div>
+        })}
+        
       </div>
       <hr/>
 
