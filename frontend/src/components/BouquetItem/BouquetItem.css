@@ -1,0 +1,45 @@
+.bouquet-item{
+    width: 100%;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #00000015;
+    transition: 0.3s;
+    animation: fadeIn 1s;
+}
+
+.bouquet-item-image{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+
+}
+
+.bouquet-item-info{
+    padding: 20px;
+}
+
+.bouquet-item-name-rating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bouquet-item-name-rating p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bouquet-item-name-rating img{
+width: 70px;
+}
+
+.bouquet-item-desc{
+    font-size: 12px;
+}
+
+.bouquet-item-price{
+    color: var(--brown);
+    font-size: 22px;
+    font-weight: 500;
+    margin: 10px 0px;
+}
