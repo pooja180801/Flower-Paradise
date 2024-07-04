@@ -1,39 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
-  background: whitesmoke;
+  font-family: Outfit, sans-serif;
+  scroll-behavior: smooth;
 }
 
-body{
-  min-height: 100vh;
+body {
+  min-height: 100%;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-.app{
-  width: 90%;
+.app {
   margin: auto;
+  width: 90%;
 }
 
-:root{
-  --brown:#642714;
+:root {
+  --brown: #642714;
   --complementary-color: #274764; /* Dark Blue */
   --green: #276442;
   --neutral-color-2: #e1a874; /* Sand Beige */
+  --pink: #FFC0CB;
 }
 
-@keyframes fadeIn{
-  0%{
+@keyframes fadeIn {
+  0% {
     opacity: 0;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
