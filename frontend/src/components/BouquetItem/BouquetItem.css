@@ -5,6 +5,7 @@
     box-shadow: 0px 0px 10px #00000015;
     transition: 0.3s;
     animation: fadeIn 1s;
+    min-height: 520px;
 }
 
 .bouquet-item-image{
@@ -42,4 +43,48 @@ width: 70px;
     font-size: 22px;
     font-weight: 500;
     margin: 10px 0px;
+}
+
+.bouquet-item-img-container{
+    position: relative;
+}
+
+.bouquet-item-img-container .add-to-cart{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 8px 8px;
+}
+
+.bouquet-item-counter{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.bouquet-item-counter .button-minus,.bouquet-item-counter .button-plus{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 5px 5px;
+}
+
+.bouquet-item-counter .button-minus{
+    color: red;
+}
+
+.bouquet-item-counter .button-plus{
+    color: green;
 }

@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './BouquetItem.css'
 import starrating from '../../assets/images/starrating.jpg'
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { Button, IconButton } from '@mui/material';
+import { FaPlus } from "react-icons/fa6";
+import { CiCirclePlus } from "react-icons/ci";
+import { CiCircleMinus } from "react-icons/ci";
+import { StoreContext } from '../context/StoreContext';
 
 const BouquetItem = ({id,name,price,description,image}) => {
 
-    const [itemCount,setItemCount]=useState(0)
+    const {cartItems,addToCart,removeFromCart}=useContext(StoreContext)
 
   return (
         <div className='bouquet-item'>
         <div className="bouquet-item-img-container">
             <img className='bouquet-item-image' src={require(`../../assets/images/${image}`)} alt="" />
-            {!itemCount ? (
-                <button className='add-to-cart' onClick={() => setItemCount(prev => prev + 1)}>Add to Cart</button>
+            {!cartItems[id] ? (
+                <FaPlus className='add-to-cart' onClick={() => addToCart(id)}/>
             ) : (
                 <div className='bouquet-item-counter'>
-                        <RemoveCircleOutlineIcon onClick={() => setItemCount(prev => prev - 1)} sx={{color:''}}/>
-                    <p>{itemCount}</p>
-                        <AddCircleOutlineIcon onClick={() => setItemCount(prev => prev + 1)} sx={{ color: '' }}/>
+                        <CiCircleMinus className='button-minus' onClick={() => removeFromCart(id)} />
+                    <p>{cartItems[id]}</p>
+                        <CiCirclePlus className='button-plus' onClick={() => addToCart(id)}/>
                 </div>
             )}
         </div>
