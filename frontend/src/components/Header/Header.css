@@ -1,5 +1,5 @@
 .header {
-    height: 90vh;
+    height: 80vh;
     margin: 0 auto;
     position: relative;
     width: 100%;
@@ -49,4 +49,30 @@
     cursor: pointer;
     border-radius: 50px;
     animation: fadeIn 3s;
+}
+
+@media(max-width:950px){
+    .header{
+        height: 38vw;
+        width: 100%;
+    }
+}
+
+@media(max-width:750px){
+    .header{
+        width: 100%;
+        height: 300px;
+    }
+
+    .header-content h2{
+        font-size: 15px;
+    }
+
+    .header-content p{
+        display: none;
+    }
+
+    .header-content button{
+        padding: 2vw 4vw;
+    }
 }
