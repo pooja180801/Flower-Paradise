@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 20px;
     margin-top: 30px;
+    background: whitesmoke;
 }
 
 .view-collections h1{
@@ -53,4 +54,11 @@ hr{
 .collections-list-item .active{
     border: 4px solid var(--brown);
     padding: 2px;
+}
+
+@media(max-width:1050px) {
+    .view-collections-text{
+        max-width: 100%;
+        font-size: 14px;
+    }
 }
