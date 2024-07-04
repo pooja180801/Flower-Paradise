@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/images/logo.png'
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { FaSearch } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+
+const Navbar = ({setShowLogin}) => {
 
     const [menu,setMenu]=useState("home");
 
@@ -13,18 +15,17 @@ const Navbar = () => {
     <div className='navbar'>
       <img src={logo} alt="" className="logo" />
       <ul className='navbar-menu'>
-        <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>home</li>
-        <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</li>
-        <li onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>mobile-app</li>
-        <li onClick={()=>setMenu("contact us")} className={menu==="contact us"?"active":""}>contact us</li>
+        <Link onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>home</Link>
+        <a href='#view-collections' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</a>
+        <a href='#footer' onClick={()=>setMenu("contact us")} className={menu==="contact us"?"active":""}>contact us</a>
       </ul>
       <div className='navbar-right'>
-      <SearchIcon/>
+      <FaSearch/>
           <div className="navbar-cart-icon">
-            <ShoppingCartIcon/>
+            <FaShoppingCart/>
             <div className="dot"></div>
           </div>
-          <button>Sign In</button>
+          <button onClick={()=>setShowLogin(true)}>Sign In</button>
 
       </div>
     </div>
