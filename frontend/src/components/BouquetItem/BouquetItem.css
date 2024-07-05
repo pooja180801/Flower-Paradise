@@ -58,6 +58,13 @@ width: 70px;
     cursor: pointer;
     border-radius: 50%;
     padding: 8px 8px;
+    background-color: var(--brown);
+    color: white;
+}
+
+.bouquet-item-img-container .add-to-cart:hover{
+    background: var(--pink);
+    color: var(--brown);
 }
 
 .bouquet-item-counter{
