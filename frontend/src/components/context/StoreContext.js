@@ -22,12 +22,21 @@ const StoreContextProvider = ({children}) => {
 
     }
 
-    useEffect(()=>{
-        console.log(cartItems)
-    },[cartItems])
+    const getTotalCartAmount=()=>{
+        let totalAmount=0;
+        //usinf for loop bcoz cartitems in object so to iterate over it
+        for(const item in cartItems){
+            if(cartItems[item]>0){
+                let itemInfo=bouquets_lists.find((product)=>product.id===item);
+                totalAmount+=itemInfo.price*cartItems[item]
+            }  
+        }
+        return totalAmount;
+    }
+
 
     const contextValue={
-        bouquets_lists,cartItems,setCartItems,addToCart,removeFromCart
+        bouquets_lists,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount
     }
 
     return (
