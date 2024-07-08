@@ -1,5 +1,5 @@
 import express from 'express'
-import { addBouquet } from '../controllers/bouquetController.js'
+import { addBouquet,removeBouquet,viewBouquets } from '../controllers/bouquetController.js'
 import multer from 'multer'
 
 
@@ -18,6 +18,8 @@ const storage = multer.diskStorage({
 const upload=multer({storage:storage})
 
 bouquetRouter.post("/add",upload.single("image"),addBouquet)
+bouquetRouter.get("/view",viewBouquets)
+bouquetRouter.post("/remove",removeBouquet)
 
 
 export default bouquetRouter;

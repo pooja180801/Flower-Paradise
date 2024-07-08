@@ -20,6 +20,7 @@ connectDB();
 
 //api endpoint
 app.use("/api/bouquet",bouquetRouter)
+app.use("/images",express.static('uploads'))
 
 
 app.get("/",(req,res)=>{
