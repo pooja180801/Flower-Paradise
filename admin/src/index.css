@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+
+
+:root {
+  --brown: #642714;
+  --complementary-color: #274764; /* Dark Blue */
+  --green: #276442;
+  --neutral-color-2: #e1a874; /* Sand Beige */
+  --pink: #FFC0CB;
+}
+
+body{
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+
+a{
+  text-decoration: none;
+}
+
+.hr{
+  border: 1px solid var(--brown);
+}
+
+.app-content{
+display: flex;
+}
