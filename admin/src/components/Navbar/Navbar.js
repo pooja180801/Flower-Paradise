@@ -9,6 +9,7 @@ const Navbar = () => {
     <div className='navbar'>
         <Link to='/'><img src={logo} alt="" className="logo" /></Link>
         <FaUser className='profile'/>
+        
       
     </div>
   )
