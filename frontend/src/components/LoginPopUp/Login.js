@@ -24,8 +24,8 @@ const Login = ({setShowLogin}) => {
             <p>By continuing, i agree to the terms of use & privacy policy.</p>
         </div>
         {currentState==="Login"
-        ?<p>Already have an account?<span onClick={()=>setCurrentState("Sign Up")}>Login Here</span></p>
-        :<p>Create a new account?<span onClick={()=>setCurrentState("Login")}>Click Here</span></p>
+        ?<p>Create a new account?<span onClick={()=>setCurrentState("Sign Up")}>Register Here</span></p>
+        :<p>Already have an account?<span onClick={()=>setCurrentState("Login")}>Login Here</span></p>
     }
         
         
