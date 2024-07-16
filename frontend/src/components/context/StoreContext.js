@@ -7,6 +7,8 @@ const StoreContextProvider = ({children}) => {
 
 
     const [cartItems,setCartItems]=useState({});
+    const url="http://localhost:4000"
+    const [token,setToken]=useState("")
 
     const addToCart=(itemId)=>{
         if(!cartItems[itemId]){
@@ -36,7 +38,7 @@ const StoreContextProvider = ({children}) => {
 
 
     const contextValue={
-        bouquets_lists,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount
+        bouquets_lists,cartItems,setCartItems,addToCart,removeFromCart,getTotalCartAmount,url,token,setToken
     }
 
     return (
