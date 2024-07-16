@@ -5,12 +5,16 @@ import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../context/StoreContext';
+import { FaUser } from "react-icons/fa";
+import { FaShoppingBag } from "react-icons/fa";
+import { IoIosLogOut } from "react-icons/io";
+
 
 
 const Navbar = ({setShowLogin}) => {
 
     const [menu,setMenu]=useState("home");
-    const {getTotalCartAmount}=useContext(StoreContext)
+    const {getTotalCartAmount,token,setToken}=useContext(StoreContext)
 
   return (
     <div className='navbar'>
@@ -26,7 +30,16 @@ const Navbar = ({setShowLogin}) => {
             <Link to='/cart'><FaShoppingCart/></Link>
             <div className={getTotalCartAmount()===0?"":"dot"}></div>
           </div>
-          <button onClick={()=>setShowLogin(true)}>Sign In</button>
+          {!token?<button onClick={()=>setShowLogin(true)}>Sign In</button>
+          :<div className='navbar-profile'>
+            <FaUser className='profile'/>
+            <ul className='nav-profile-dropdown'>
+              <li><FaShoppingBag className='icons'/><p>Orders</p></li>
+              <hr />
+              <li><IoIosLogOut className='icons'/><p>Logout</p></li>
+            </ul>
+            </div>}
+          
 
       </div>
     </div>
