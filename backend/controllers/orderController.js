@@ -11,10 +11,11 @@ const placeOrder=async(req,res)=>{
     try {
         const newOrder=new orderModel({
             userId:req.body.userId,
-            items:req.body,items,
+            items:req.body.items,
             amount:req.body.amount,
             address:req.body.address
         })
+
         await newOrder.save()
         await userModel.findByIdAndUpdate(req.body.userId,{cartData:{}});
 
@@ -24,7 +25,7 @@ const placeOrder=async(req,res)=>{
                 product_data:{
                     name:item.name
                 },
-                unit_amount:item.price
+                unit_amount:(item.price)*100
             },
             quantity:item.quantity
         }))
@@ -35,7 +36,7 @@ const placeOrder=async(req,res)=>{
                 product_data:{
                     name:"Delivery Charges"
                 },
-                unit_amount:150
+                unit_amount:150*100
             },
             quantity:1
         })
@@ -43,11 +44,64 @@ const placeOrder=async(req,res)=>{
         const session=await stripe.checkout.sessions.create({
             line_items:line_items,
             mode:'payment',
-            success_url:``
+            success_url:`${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
+            cancel_url:`${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
         })
+
+        res.json({
+            success:true,
+            session_url:session.url
+        })
+
     } catch (error) {
-        
+        console.log(error)
+        res.json({
+            success:false,
+            message:"Error"
+        })
     }
 }
 
-export {placeOrder}
+ const verifyOrder=async(req,res)=>{
+    const {orderId,success}=req.body;
+    try {
+        if(success=="true"){
+            await orderModel.findByIdAndUpdate(orderId,{payment:true})
+            res.json({
+                success:true,
+                message:"Paid successfully"
+            })
+        }else{
+            await orderModel.findByIdAndDelete(orderId)
+            res.json({
+                success:false,
+                message:"Payment unsuccesful"
+            })
+        }
+    } catch (error) {
+        console.log(error)
+        res.json({
+            success:false,
+            message:'Error'
+        })
+    }
+ }
+
+ //user orders for frontend
+ const userOrders=async(req,res)=>{
+    try {
+        const orders=await orderModel.find({userId:req.body.userId})
+        res.json({
+            success:true,
+            data:orders
+        })
+    } catch (error) {
+        console.log(error)
+        res.json({
+            success:false,
+            message:'Error'
+        })
+    }
+ }
+
+export {placeOrder,verifyOrder,userOrders}
