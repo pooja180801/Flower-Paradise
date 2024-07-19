@@ -8,12 +8,12 @@ import { StoreContext } from '../context/StoreContext';
 
 const BouquetItem = ({id,name,price,description,image}) => {
 
-    const {cartItems,addToCart,removeFromCart}=useContext(StoreContext)
+    const {cartItems,addToCart,removeFromCart,url}=useContext(StoreContext)
 
   return (
         <div className='bouquet-item'>
         <div className="bouquet-item-img-container">
-            <img className='bouquet-item-image' src={require(`../../assets/images/${image}`)} alt="" />
+            <img className='bouquet-item-image' src={url+"/images/"+image} alt="" />
             {!cartItems[id] ? (
                 <FaPlus className='add-to-cart' onClick={() => addToCart(id)}/>
             ) : (

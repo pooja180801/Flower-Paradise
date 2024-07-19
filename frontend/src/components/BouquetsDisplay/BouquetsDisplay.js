@@ -13,7 +13,7 @@ const BouquetsDisplay = ({category}) => {
         <div className="bouquets-display-list">
             {bouquets_lists.map((item,index)=>{
               if(category==="All" || category===item.category){
-                return <BouquetItem key={index} id={item.id} name={item.name} description={item.description} price={item.price} image={item.image}/>
+                return <BouquetItem key={index} id={item._id} name={item.name} description={item.description} price={item.price} image={item.image}/>
               }
                 })}
         </div>
