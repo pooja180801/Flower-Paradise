@@ -36,3 +36,10 @@
     width: 100%;
     max-width: max(40%,500px);
 }
+
+@media (max-width:750px) {
+    .place-order{
+        display: flex;
+        flex-direction: column;
+    }
+}
