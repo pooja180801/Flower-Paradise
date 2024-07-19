@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from '../../assets/images/logo.png'
 import { FaSearch } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../context/StoreContext';
 import { FaUser } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
@@ -13,8 +13,16 @@ import { IoIosLogOut } from "react-icons/io";
 
 const Navbar = ({setShowLogin}) => {
 
+    const navigate=useNavigate();
+
     const [menu,setMenu]=useState("home");
     const {getTotalCartAmount,token,setToken}=useContext(StoreContext)
+
+    const logout=()=>{
+      localStorage.removeItem("token");
+      setToken("")
+      navigate("/")
+    }
 
   return (
     <div className='navbar'>
@@ -36,7 +44,7 @@ const Navbar = ({setShowLogin}) => {
             <ul className='nav-profile-dropdown'>
               <li><FaShoppingBag className='icons'/><p>Orders</p></li>
               <hr />
-              <li><IoIosLogOut className='icons'/><p>Logout</p></li>
+              <li onClick={logout}><IoIosLogOut className='icons'/><p>Logout</p></li>
             </ul>
             </div>}
           
