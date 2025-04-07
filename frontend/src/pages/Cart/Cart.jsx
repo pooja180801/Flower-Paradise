@@ -60,7 +60,9 @@ const Cart = () => {
               <b>Rs.{getTotalCartAmount()===0?0:getTotalCartAmount()+150}</b>
             </div>
             <div className='checkout-button'>
-            <button onClick={()=>navigate('/order')}>PROCEED TO CHECK OUT</button>
+            <button 
+            disabled={Object.keys(cartItems).length === 0}
+            onClick={()=>navigate('/order')}>PROCEED TO CHECK OUT</button>
             </div>
           </div>
         </div>
