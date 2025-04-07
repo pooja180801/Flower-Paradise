@@ -63,8 +63,7 @@ const StoreContextProvider = ({children}) => {
         async function loadData(){
             await fetchBouquetList();
             if(localStorage.getItem("token")){
-                setToken(localStorage.getItem("token"))
-                await loadCartData(localStorage.getItem("token"));
+                setToken(localStorage.getItem())
             }
         }
         loadData();
