@@ -42,7 +42,7 @@ const Navbar = ({setShowLogin}) => {
           :<div className='navbar-profile'>
             <FaUser className='profile'/>
             <ul className='nav-profile-dropdown'>
-              <li><FaShoppingBag className='icons'/><p>Orders</p></li>
+              <Link to='/myorders'> <li><FaShoppingBag className='icons'/><p>Orders</p></li></Link>
               <hr />
               <li onClick={logout}><IoIosLogOut className='icons'/><p>Logout</p></li>
             </ul>
